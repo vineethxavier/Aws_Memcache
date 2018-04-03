@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head><title>project 3&4</title></head>
+<body>
+    <fieldset class="datagrid">
+    <h1 style="color:blue;">Cloud Computing- vX</h1>
+    </fieldset>
+    </br>
+
+    <h4>------------------------------------------------------------------------------</h4>
+    <h2> uploading a file from local csv to rds</h2>
+    <form method="POST" action="/loadFileRDS" enctype="multipart/form-data">
+        <!--<input type="file" name="file" multiple>-->
+        <input type="submit" name="loadFileRDS" value="loadFileRDS">
+        
+        <h4>total time= {{ (session['total_time']) }} sec..</h4>
+    </form>
+    <h4>------------------------------------------------------------------------------</h4>
+    <h2> user command- without memcached</h2>
+    <form method="post" action="/fetchWithoutMem" enctype="multipart/form-data">
+        <input type="text" name="text">
+        <input type="submit" name="find" value="find">
+       <!-- <input type="hidden" name="totaltime" value={{ session['total_time'] }}>-->
+       <h4>total time= {{ session['total_time'] }} sec..</h4>
+    </form>
+    <h4>------------------------------------------------------------------------------</h4>
+    <h2> user command- with memcached</h2>
+    <form method="POST" action="/fetchWithMem" enctype="multipart/form-data">
+        <input type="text" name="text">
+        <input type="submit" name="find" value="find">
+       <!-- <input type="hidden" name="totaltime" value={{ session['total_time'] }}>-->
+       <h4>total time= {{ session['total_time'] }} sec..</h4>
+    </form>
+    <h4>------------------------------------------------------------------------------</h4>
+    <!--<h2> user command- retrive from memcached</h2>
+    <form method="POST" action="/fetchFromMem" enctype="multipart/form-data">
+        <input type="text" name="text">
+        <input type="submit" name="find" value="find">
+      
+       <h4>total time= {{ session['total_time'] }} sec..</h4>
+    </form>--> <!-- <input type="hidden" name="totaltime" value={{ session['total_time'] }}>-->
+</body>
+</html>
